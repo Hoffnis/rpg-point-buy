@@ -1,0 +1,23 @@
+<div class="points-card"
+[class.completed]="remainingPoints === 0">
+
+    <h2 class="points-title">🎲 Pontos Restantes</h2>
+
+    <span class="points">
+
+        {{remainingPoints}} / {{totalPoints}}
+
+    </span>
+
+    <div class="progress">
+
+        <div
+            class="fill"
+            [style.width.%]="percentage"
+            [style.background]="barColor"
+            [class.completed]="remainingPoints===0">
+        </div>
+
+    </div>
+
+</div>

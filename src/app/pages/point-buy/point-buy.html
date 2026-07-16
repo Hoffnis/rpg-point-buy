@@ -1,0 +1,88 @@
+<div class="background">
+
+  <div class="overlay">
+
+    <div class="container">
+
+      <header>
+
+        <h1>⚔ Calculadora Compra de Atributos D&D⚔</h1>
+
+        <p>
+          Distribua os <strong>30 pontos</strong> entre seus atributos.
+        </p>
+
+      </header>
+
+      <app-points-display [remainingPoints]="remainingPoints" [totalPoints]="TOTAL_POINTS">
+      </app-points-display>
+
+      <div class="actions">
+
+        <button class="reset-button" (click)="resetAttributes()">
+
+          🔄 Restaurar atributos
+
+        </button>
+
+        <button class="copy-button" (click)="copyBuild()">
+
+          📋 Copiar distribuição
+
+        </button>
+
+      </div>
+
+      <div class="attributes">
+
+        @for(attribute of attributes; track attribute.name){
+
+        <app-attribute-card [attribute]="attribute" [canIncrease]="canIncrease(attribute)"
+          [canDecrease]="canDecrease(attribute)" (increase)="increase(attribute)" (decrease)="decrease(attribute)">
+        </app-attribute-card>
+
+        }
+
+      </div>
+
+      <footer>
+        <h3>📜 Sistema Point Buy</h3>
+        <p>• Total de pontos: <strong>30</strong></p>
+        <p>• Valores permitidos: <strong>5 até 20</strong></p>
+        <p>• Os modificadores seguem as regras oficiais do D&D 5e.</p>
+
+        <details class="cost-details">
+          <summary>📊 Ver tabela de custos em pontos</summary>
+
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Valor do Atributo</th>
+                <th>Custo em Pontos</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(item of costTable; track item.score) {
+              <tr>
+                <td>{{ item.score }}</td>
+                <td [class.positive]="(item.cost * -1) > 0" [class.negative]="(item.cost * -1) < 0">
+                  {{ (item.cost * -1) > 0 ? '+' + (item.cost * -1) : (item.cost * -1) }}
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </details>
+      </footer>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="toast" [class.visible]="showToast">
+
+  ✅ Distribuição copiada para a área de transferência!
+
+</div>

@@ -1,0 +1,265 @@
+.background{
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(circle at top,#5d4630 0%,transparent 40%),
+        radial-gradient(circle at bottom,#243447 0%,transparent 35%),
+        linear-gradient(180deg,#111111,#1a1a1a,#101820);
+
+}
+
+.overlay{
+
+    backdrop-filter:blur(2px);
+
+    min-height:100vh;
+
+    padding:40px 20px;
+
+}
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+header h1{
+
+    color:#d4af37;
+
+    font-size:2.6rem;
+
+    margin-bottom:10px;
+
+    text-shadow:0 0 12px rgba(212,175,55,.3);
+
+}
+
+header p{
+
+    color:#DDD;
+
+    font-size:1.1rem;
+
+}
+
+.actions{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px 0;
+
+}
+
+.copy-button{
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:14px 28px;
+
+    background:#2980B9;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.copy-button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(41,128,185,.4);
+
+}
+
+.reset-button{
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:14px 28px;
+
+    background:#d4af37;
+
+    color:#222;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.reset-button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(212,175,55,.35);
+
+}
+
+.attributes{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:22px;
+
+}
+
+footer{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    color:#BBB;
+
+    padding:30px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h3{
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+
+}
+
+.toast {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    background: #2ECC71;
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+    z-index: 999;
+
+    transform: translate(-50%, 30px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s;
+
+}
+
+.toast.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+
+}
+
+.cost-details {
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+
+  /* O botão/texto que o usuário clica */
+  summary {
+    cursor: pointer;
+    color: #aaa;
+    font-size: 0.95rem;
+    font-weight: bold;
+    outline: none;
+    transition: color 0.2s;
+    text-align: center;
+    list-style: none; /* Remove a setinha padrão em alguns navegadores */
+
+    &:hover {
+      color: #fff;
+    }
+
+    /* Adiciona um ícone de seta customizado */
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+/* Estilo da tabela quando aberta */
+.cost-table {
+  width: 100%;
+  max-width: 320px;
+  margin: 15px auto 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background-color: #202020; /* Segue o fundo dos seus cards */
+  border-radius: 8px;
+  overflow: hidden;
+
+  th, td {
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  th {
+    background-color: #151515;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  td {
+    color: #ddd;
+  }
+
+  /* Remove a borda da última linha */
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Cores condicionais para os números */
+  .positive { color: #2ECC71; } /* Verde para custo positivo */
+  .negative { color: #E74C3C; } /* Vermelho para ganho de pontos (negativo) */
+}

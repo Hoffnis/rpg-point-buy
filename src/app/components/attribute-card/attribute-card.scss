@@ -1,0 +1,173 @@
+.card{
+
+    background:rgba(60,60,60,.45);
+
+    backdrop-filter:blur(12px);
+
+    border-left:6px solid;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.25s;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 16px 40px rgba(0,0,0,.45);
+
+}
+
+.header{
+
+    text-align:center;
+
+}
+
+.header h2{
+
+    color:#ECECEC;
+
+    margin:0;
+
+    font-size:1.35rem;
+
+}
+
+.value-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:20px 0;
+
+}
+
+.value{
+
+    font-size:4rem;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.modifier{
+
+    margin-top:6px;
+
+    color:#CFCFCF;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:22px 0;
+
+    gap: 98px;
+
+}
+
+button{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#444;
+
+    color:white;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover:not(:disabled){
+
+    background:#d4af37;
+
+    color:#111;
+
+    transform:scale(1.08);
+
+}
+
+button:disabled{
+
+    opacity:.3;
+
+    cursor:not-allowed;
+
+}
+
+.costs {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Mantém as duas colunas para as caixinhas de cima */
+  gap: 12px;
+  width: 100%;
+}
+
+.cost-box {
+  background: #202020;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:last-of-type {
+    grid-column: span 2;     
+    justify-self: center;     
+    width: 100%;              
+    max-width: 130px;        
+  }
+}
+
+.cost-box span{
+
+    display:block;
+
+    color:#AAAAAA;
+
+    font-size:.8rem;
+
+    margin-bottom:6px;
+
+}
+
+.cost-box strong{
+
+    color:#d4af37;
+
+    font-size:1rem;
+
+}

@@ -1,0 +1,108 @@
+<div class="card"
+     [style.border-left-color]="getColor(attribute.value)">
+
+    <div class="header">
+
+        <h2>
+
+            {{attribute.name}}
+
+        </h2>
+
+    </div>
+
+    <div class="value-section">
+
+        <span
+            class="value"
+            [style.color]="getColor(attribute.value)">
+
+            {{attribute.value}}
+
+        </span>
+
+        <div class="modifier">
+
+            ({{getModifier(attribute.value)>=0?'+':''}}{{getModifier(attribute.value)}})
+
+        </div>
+
+    </div>
+
+    <div class="controls">
+
+        <button
+
+            (click)="decrease.emit()"
+
+            [disabled]="!canDecrease">
+
+            −
+
+        </button>
+
+        <button
+
+            (click)="increase.emit()"
+
+            [disabled]="!canIncrease">
+
+            +
+
+        </button>
+
+    </div>
+
+    <div class="costs">
+
+        <div class="cost-box">
+
+            <span>
+
+                Nível Anterior
+
+            </span>
+
+            <strong>
+
+                {{attribute.value==5?'Min.':'+'+getPreviusCost(attribute.value)+' pts'}}
+
+            </strong>
+
+        </div>
+
+        <div class="cost-box">
+
+            <span>
+
+                Próximo Nível
+
+            </span>
+
+            <strong>
+
+                {{attribute.value==20?'Máx.':'-'+getNextCost(attribute.value)+' pts'}}
+
+            </strong>
+
+        </div>
+
+        <div class="cost-box">
+
+            <span>
+
+                Pontos Investidos
+
+            </span>
+
+            <strong>
+
+                {{getCurrentCost(attribute.value)}} pts
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
